@@ -51,7 +51,7 @@ export const ServerStatusProvider: React.FC<{ children: ReactNode }> = ({ childr
 export const useServerStatus = () => {
   const context = useContext(ServerStatusContext);
   if (!context) {
-    throw new Error("useServerStatus must be used within a ServerStatusProvider");
+    throw new Error("No context");
   }
   return context;
 };

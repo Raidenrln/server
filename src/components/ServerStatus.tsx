@@ -11,8 +11,8 @@ const ServerStatus: React.FC = () => {
     : "—";
 
   return (
-    <div className="flex max-w-md items-center text-gray-900">
-      <div className="w-full rounded-xl border border-gray-300 p-6 space-y-4 shadow-sm">
+    <div className="flex w-full items-center text-gray-900">
+      <div className="w-full rounded-xl border border-gray-300 p-6 space-y-4 shadow-sm hover:shadow-lg">
         {/* Title */}
         <h1 className="text-2xl font-semibold text-center">
           Server Status
@@ -34,12 +34,12 @@ const ServerStatus: React.FC = () => {
         <div className="space-y-2 text-sm">
           <p>
             <span className="font-medium text-gray-500">Ping:</span>{" "}
-            {status.ping ?? "--"} ms
+            {isOnline ? `${status.ping ?? "--"} ms` : "offline"}
           </p>
 
           <p>
             <span className="font-medium text-gray-500">Players:</span>{" "}
-            {status.players.online} / {status.players.max}
+            {isOnline ? `${status.players.online} / ${status.players.max}` : "offline"}
           </p>
 
           <p>
@@ -51,23 +51,6 @@ const ServerStatus: React.FC = () => {
             Last Updated: {formattedTime}
           </p>
         </div>
-
-        {/* Player List */}
-        {status.players.list && status.players.list.length > 0 && (
-          <div>
-            <p className="text-sm text-gray-500 mb-2">Online Players</p>
-            <ul className="space-y-1">
-              {status.players.list.map((playerName, index) => (
-                <li
-                  key={`${playerName}-${index}`}
-                  className="px-3 py-1 rounded-md bg-gray-200 text-gray-900 text-sm"
-                >
-                  {playerName}
-                </li>
-              ))}
-            </ul>
-          </div>
-        )}
       </div>
     </div>
   );
