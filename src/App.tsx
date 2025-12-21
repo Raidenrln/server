@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import { BrowserRouter, Routes, Route, NavLink } from "react-router-dom";
 
 import Home from "./pages/Home";
-import SearchPlayer from "./pages/SearchPlayer";
+import Players from "./pages/Players";
+import WebSettings from "./pages/WebSettings";
 import { ServerStatusProvider } from "./context/ServerStatusContext";
 
 const App: React.FC = () => {
@@ -38,8 +39,8 @@ const App: React.FC = () => {
 
                 <nav className="flex flex-col space-y-2 flex-1">
                   <SidebarItem to="/server" label="Home" open={open} />
-                  <SidebarItem to="/server/search" label="Search" open={open} />
                   <SidebarItem to="/server/players" label="Players" open={open} />
+                  <SidebarItem to="/server/settings" label="Settings" open={open} />
                 </nav>
               </div>
             )}
@@ -49,7 +50,8 @@ const App: React.FC = () => {
           <div className="flex-1 p-4 overflow-auto bg-white">
             <Routes>
               <Route path="/server" element={<Home />} />
-              <Route path="/server/search" element={<SearchPlayer />} />
+              <Route path="/server/players" element={<Players />} />
+              <Route path="/server/settings" element={<WebSettings />} />
             </Routes>
           </div>
         </div>

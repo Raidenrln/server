@@ -1,4 +1,4 @@
-import { useServerStatus } from "../context/ServerStatusContext";
+import { useServerStatus } from "../../hooks/UseServerStatus";
 
 const ServerStatus: React.FC = () => {
   const status = useServerStatus();

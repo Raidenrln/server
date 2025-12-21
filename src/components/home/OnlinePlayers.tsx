@@ -1,4 +1,4 @@
-import { useServerStatus } from "../context/ServerStatusContext";
+import { useServerStatus } from "../../hooks/UseServerStatus";
 const OnlinePlayers = () => {
   const status = useServerStatus();
   const isOnline = status.online;

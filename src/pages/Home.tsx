@@ -1,8 +1,8 @@
-import EventCard from "../components/EventCard";
-import OnlinePlayers from "../components/OnlinePlayers";
-import ServerStatus from "../components/ServerStatus";
-import TotalPlayers from "../components/TotalPlayers";
-import { UserCacheProvider } from "../context/FetchTotalPlayerContext";
+import EventCard from "../components/home/EventCard";
+import OnlinePlayers from "../components/home/OnlinePlayers";
+import ServerStatus from "../components/home/ServerStatus";
+import TotalPlayers from "../components/home/TotalPlayers";
+import { UserCacheProvider } from "../context/UserCacheContext";
 
 const Home: React.FC = () => {
   return (

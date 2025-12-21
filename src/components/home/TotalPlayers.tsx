@@ -1,4 +1,4 @@
-import { useUserCache } from "../context/FetchTotalPlayerContext";
+import { useUserCache } from "../../hooks/UseUserCache";
 
 const TotalPlayers = () => {
   const userCache = useUserCache();
